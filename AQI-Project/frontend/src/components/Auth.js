@@ -71,6 +71,15 @@ export default function Auth() {
   const navigate        = useNavigate();
   const { login }       = useAuth();
 
+  const handleGuest = () => {
+  login("guest-session", {
+    name: "Guest User",
+    role: "guest",
+  });
+
+  navigate("/dashboard");
+};
+
   const [tab,       setTab]       = useState("signin");
   const [email,     setEmail]     = useState("");
   const [password,  setPassword]  = useState("");
@@ -179,7 +188,7 @@ export default function Auth() {
     <AuthCard
       tab={tab}
       setTab={handleTabChange}
-      onGuest={() => navigate("/dashboard")}
+      onGuest={handleGuest}
     >
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
 

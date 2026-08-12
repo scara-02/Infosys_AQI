@@ -39,14 +39,6 @@ export default function Navbar() {
   const dateStr = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()}`;
   const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
 
-  const tabs = [
-    { to: "/dashboard",     label: "Air\nQuality" },
-    { to: "/prediction",    label: "Forecast" },
-    { to: "/route-planner", label: "Route\nPlanner" },
-    { to: "/alerts",        label: "My\nExposure",    altTo: "/alerts" },
-    { to: "/alerts",        label: "Profile &\nAlerts" },
-  ];
-
   return (
     <nav className="app-nav">
       {/* ── Tab links ── */}
@@ -101,7 +93,7 @@ export default function Navbar() {
           className="nav-lang-btn" 
           value={i18n.language} 
           onChange={(e) => i18n.changeLanguage(e.target.value)}
-          style={{ appearance: "none", background: "transparent", border: "none", color: "inherit", cursor: "pointer", fontSize: "14px", fontWeight: "500", outline: "none", paddingRight: "10px" }}
+          style={{ appearance: "none", background: "transparent", border: "none", color: "inherit", cursor: "pointer", fontWeight: "500", outline: "none", paddingRight: "10px" }}
         >
           <option value="en" style={{ color: "#000" }}>English</option>
           <option value="hi" style={{ color: "#000" }}>हिंदी</option>
